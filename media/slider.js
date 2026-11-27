@@ -45,7 +45,7 @@ document.querySelectorAll('.dharma-slider').forEach(root => {
   dots.forEach((dot, number) => dot.addEventListener('click', () => show(number)));
 
   root.addEventListener('animationend', event => {
-    if (event.animationName !== 'venecia-slide-out') return;
+    if (event.animationName !== 'dharma-slide-out') return;
     event.target.removeAttribute('data-leaving');
     if (pendingSlide !== null) {
       const next = pendingSlide;

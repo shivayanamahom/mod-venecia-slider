@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" method="upgrade">
- <name>MOD_DHARMA_SLIDER</name><author>Dharma</author><version>1.0.2</version><description>MOD_DHARMA_SLIDER_DESC</description>
+ <name>MOD_DHARMA_SLIDER</name><author>Dharma</author><version>1.0.3</version><description>MOD_DHARMA_SLIDER_DESC</description>
  <namespace path="src">Joomla\Module\DharmaSlider</namespace>
  <files><folder module="mod_dharma_slider">services</folder><folder>src</folder><folder>tmpl</folder><folder>language</folder></files>
  <media destination="mod_dharma_slider" folder="media"><filename>slider.css</filename><filename>slider.js</filename></media>

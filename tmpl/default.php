@@ -7,8 +7,8 @@ use Joomla\CMS\Uri\Uri;
 $slides = (array) $params->get('slides', []);
 if (!$slides) return;
 $doc = Factory::getApplication()->getDocument();
-$doc->addStyleSheet(Uri::root(true) . '/media/mod_dharma_slider/slider.css?v=1.0.17');
-$doc->addScript(Uri::root(true) . '/media/mod_dharma_slider/slider.js?v=1.0.8', [], ['defer' => true]);
+$doc->addStyleSheet(Uri::root(true) . '/media/mod_dharma_slider/slider.css?v=1.0.3');
+$doc->addScript(Uri::root(true) . '/media/mod_dharma_slider/slider.js?v=1.0.3', [], ['defer' => true]);
 $esc = static fn ($s) => htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8');
 $hexColor = static function ($value, string $fallback): string {
     return is_string($value) && preg_match('/^#[0-9a-f]{6}$/iD', $value) ? $value : $fallback;
