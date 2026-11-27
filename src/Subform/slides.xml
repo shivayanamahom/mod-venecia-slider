@@ -13,12 +13,12 @@
  <field name="text_shade_color" type="color" label="MOD_DHARMA_SLIDER_TEXT_SHADE_COLOR" default="#ffffff" format="hex" showon="text_shade:1"/>
  <field name="text_shade_transparency" type="number" label="MOD_DHARMA_SLIDER_TEXT_SHADE_TRANSPARENCY" default="12" min="0" max="100" step="1" filter="integer" showon="text_shade:1"/>
  <field name="button1_text" type="text" label="MOD_DHARMA_SLIDER_BUTTON1_TEXT"/>
- <field name="button1_class" type="text" label="MOD_DHARMA_SLIDER_BUTTON1_CLASS" default="knopka" filter="string"/>
+ <field name="button1_class" type="text" label="MOD_DHARMA_SLIDER_BUTTON1_CLASS" default="dharma-slider__button" filter="string"/>
  <field name="button1_icon" type="text" label="MOD_DHARMA_SLIDER_BUTTON1_ICON" description="MOD_DHARMA_SLIDER_ICON_DESC" filter="string"/>
  <field name="button1_url" type="text" label="MOD_DHARMA_SLIDER_BUTTON1_URL"/>
  <field name="button1_target" type="list" label="MOD_DHARMA_SLIDER_BUTTON1_TARGET" default="same"><option value="same">MOD_DHARMA_SLIDER_SAME</option><option value="new">MOD_DHARMA_SLIDER_NEW</option></field>
  <field name="button2_text" type="text" label="MOD_DHARMA_SLIDER_BUTTON2_TEXT"/>
- <field name="button2_class" type="text" label="MOD_DHARMA_SLIDER_BUTTON2_CLASS" default="knopka2" filter="string"/>
+ <field name="button2_class" type="text" label="MOD_DHARMA_SLIDER_BUTTON2_CLASS" default="dharma-slider__button dharma-slider__button--secondary" filter="string"/>
  <field name="button2_icon" type="text" label="MOD_DHARMA_SLIDER_BUTTON2_ICON" description="MOD_DHARMA_SLIDER_ICON_DESC" filter="string"/>
  <field name="button2_url" type="text" label="MOD_DHARMA_SLIDER_BUTTON2_URL"/>
  <field name="button2_target" type="list" label="MOD_DHARMA_SLIDER_BUTTON2_TARGET" default="same"><option value="same">MOD_DHARMA_SLIDER_SAME</option><option value="new">MOD_DHARMA_SLIDER_NEW</option></field>

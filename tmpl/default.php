@@ -62,7 +62,7 @@ $validUrl = static function ($url) { $url = trim((string) $url); return $url !==
      <?php elseif ($subtitle !== '') : ?>
       <p class="dharma-slider__subtitle<?php echo str_contains($subtitle, "\n") ? ' dharma-slider__subtitle--multiline' : ''; ?>"><?php echo nl2br($esc($subtitle)); ?></p>
      <?php endif; ?>
-     <div class="d-flex flex-wrap justify-content-center gap-3">
+     <div class="dharma-slider__buttons">
       <?php foreach ([1, 2] as $number) :
           $prefix = 'button' . $number . '_';
           $text = trim((string) ($slide->{$prefix . 'text'} ?? ''));
@@ -70,7 +70,7 @@ $validUrl = static function ($url) { $url = trim((string) $url); return $url !==
           if ($text === '' || !$validUrl($url)) {
               continue;
           }
-          $class = $slide->{$prefix . 'class'} ?? ($number === 1 ? 'knopka' : 'knopka2');
+          $class = $slide->{$prefix . 'class'} ?? ($number === 1 ? 'dharma-slider__button' : 'dharma-slider__button dharma-slider__button--secondary');
           $icon = trim((string) ($slide->{$prefix . 'icon'} ?? ''));
           $newTab = ($slide->{$prefix . 'target'} ?? '') === 'new';
       ?>
