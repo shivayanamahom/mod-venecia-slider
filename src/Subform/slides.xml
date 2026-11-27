@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+ <field name="title" type="text" label="MOD_VENECIA_SLIDER_TITLE"/>
+ <field name="title_color" type="color" label="MOD_VENECIA_SLIDER_TITLE_COLOR" default="#102246" format="hex"/>
+ <field name="subtitle" type="textarea" label="MOD_VENECIA_SLIDER_SUBTITLE" rows="3"/>
+ <field name="subtitle_color" type="color" label="MOD_VENECIA_SLIDER_SUBTITLE_COLOR" default="#102246" format="hex"/>
+ <field name="background" type="color" label="MOD_VENECIA_SLIDER_BACKGROUND" default="#e8f4f2" format="hex"/>
+ <field name="image" type="media" label="MOD_VENECIA_SLIDER_IMAGE"/>
+ <field name="text_shade" type="radio" label="MOD_VENECIA_SLIDER_TEXT_SHADE" default="1" layout="joomla.form.field.radio.switcher" filter="integer">
+  <option value="0">JNO</option>
+  <option value="1">JYES</option>
+ </field>
+ <field name="text_shade_color" type="color" label="MOD_VENECIA_SLIDER_TEXT_SHADE_COLOR" default="#ffffff" format="hex" showon="text_shade:1"/>
+ <field name="text_shade_transparency" type="number" label="MOD_VENECIA_SLIDER_TEXT_SHADE_TRANSPARENCY" default="12" min="0" max="100" step="1" filter="integer" showon="text_shade:1"/>
+ <field name="button1_text" type="text" label="MOD_VENECIA_SLIDER_BUTTON1_TEXT"/>
+ <field name="button1_class" type="text" label="MOD_VENECIA_SLIDER_BUTTON1_CLASS" default="knopka" filter="string"/>
+ <field name="button1_icon" type="text" label="MOD_VENECIA_SLIDER_BUTTON1_ICON" description="MOD_VENECIA_SLIDER_ICON_DESC" filter="string"/>
+ <field name="button1_url" type="text" label="MOD_VENECIA_SLIDER_BUTTON1_URL"/>
+ <field name="button1_target" type="list" label="MOD_VENECIA_SLIDER_BUTTON1_TARGET" default="same"><option value="same">MOD_VENECIA_SLIDER_SAME</option><option value="new">MOD_VENECIA_SLIDER_NEW</option></field>
+ <field name="button2_text" type="text" label="MOD_VENECIA_SLIDER_BUTTON2_TEXT"/>
+ <field name="button2_class" type="text" label="MOD_VENECIA_SLIDER_BUTTON2_CLASS" default="knopka2" filter="string"/>
+ <field name="button2_icon" type="text" label="MOD_VENECIA_SLIDER_BUTTON2_ICON" description="MOD_VENECIA_SLIDER_ICON_DESC" filter="string"/>
+ <field name="button2_url" type="text" label="MOD_VENECIA_SLIDER_BUTTON2_URL"/>
+ <field name="button2_target" type="list" label="MOD_VENECIA_SLIDER_BUTTON2_TARGET" default="same"><option value="same">MOD_VENECIA_SLIDER_SAME</option><option value="new">MOD_VENECIA_SLIDER_NEW</option></field>
+</form>

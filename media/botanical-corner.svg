@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 205" fill="none">
+  <!-- Broad leaves spread from a common point just outside the frame. -->
+  <g fill="#eff8ef">
+    <path d="M-18 3C45 5 135-22 272 5C200 43 95 40-18 3Z"/>
+    <path d="M-14 7C94 24 172 53 230 110C135 107 54 62-14 7Z"/>
+    <path d="M-18 11C46 51 100 105 121 174C51 146 3 83-18 11Z"/>
+    <path d="M-22 18C9 66 32 135 20 205C-18 162-34 88-22 18Z"/>
+  </g>
+  <path fill="#a8cec1" d="M-9 0C95-10 222-25 320-7C234 10 130 17-9 0Z"/>
+  <path fill="#b6d8cb" d="M-12 8C64 33 153 77 198 132C99 101 32 54-12 8Z"/>
+</svg>

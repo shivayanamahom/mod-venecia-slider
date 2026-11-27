@@ -1,0 +1,260 @@
+.venecia-slider,
+.venecia-slider__slide { position: relative; }
+
+.venecia-slider::before,
+.venecia-slider::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 5rem;
+  aspect-ratio: 320 / 205;
+  background: url("botanical-corner.svg") left top / contain no-repeat;
+  opacity: .32;
+  pointer-events: none;
+}
+
+.venecia-slider::before { inset: 0 auto auto 0; }
+.venecia-slider::after {
+  inset: auto 0 0 auto;
+  width: 3rem;
+  transform: rotate(180deg);
+  opacity: .24;
+}
+
+.venecia-slider__slide {
+  isolation: isolate;
+  background: var(--venecia-slide-bg);
+}
+
+.venecia-slider [hidden] { display: none; }
+
+.venecia-slider__slide--photo { color: var(--dharma-surface, #fff); }
+
+.venecia-slider__image {
+  position: absolute;
+  inset: 0;
+}
+
+.venecia-slider__image {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venecia-slider__slide .container > .row { min-height: 25rem; }
+
+.venecia-slider__copy {
+  position: relative;
+  isolation: isolate;
+  padding-block: var(--dharma-section, 2.5rem);
+}
+
+.venecia-slider__slide--shade .venecia-slider__copy::before {
+  position: absolute;
+  z-index: -1;
+  inset: -2rem -3rem;
+  background: radial-gradient(ellipse at center,
+    var(--venecia-shade-color),
+    color-mix(in srgb, var(--venecia-shade-color) 77%, transparent) 45%,
+    transparent 78%);
+  opacity: var(--venecia-shade-opacity);
+  filter: blur(1.25rem);
+  content: "";
+  pointer-events: none;
+}
+
+.venecia-slider__title {
+  margin: 0 0 1rem;
+  color: var(--venecia-title-color, var(--dharma-ink, #102246));
+  font-size: 2rem;
+  line-height: 1.1;
+  text-wrap: balance;
+  text-transform: uppercase;
+}
+
+.venecia-slider__subtitle {
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+  color: var(--venecia-subtitle-color, var(--dharma-ink, #102246));
+  font-size: var(--dharma-fs-lg, 1.125rem);
+}
+
+.venecia-slider__subtitle--multiline {
+  font-size: 1rem;
+  text-align: start;
+}
+
+.venecia-slider__slide--checklist {
+  color: var(--dharma-surface, #fff);
+  background: linear-gradient(120deg, var(--dharma-ink, #102246), var(--dharma-secondary, #0071f5));
+}
+
+.venecia-slider__slide--checklist .venecia-slider__title {
+  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
+}
+
+.venecia-slider__checklist {
+  max-width: 58rem;
+  color: var(--venecia-subtitle-color, var(--dharma-surface, #fff));
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+.venecia-slider__checklist li {
+  padding-block: .45rem;
+  border-block-start: 1px solid rgb(255 255 255 / 22%);
+}
+
+.venecia-slider__checkmark {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: .1em;
+}
+
+.venecia-slider__slide--photo .knopka2:not(:hover) {
+  border-color: currentColor;
+  color: inherit;
+}
+
+.venecia-slider--ready .venecia-slider__track {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.venecia-slider--ready .venecia-slider__slide {
+  grid-area: 1 / 1;
+  display: grid;
+  align-items: center;
+  visibility: hidden;
+}
+
+.venecia-slider--ready .venecia-slider__slide[data-active] { visibility: visible; }
+
+.venecia-slider__track:has([data-leaving]) [data-active] {
+  animation: venecia-slide-in 1.8s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+.venecia-slider__slide[data-leaving] {
+  visibility: visible;
+  animation: venecia-slide-out 1.8s cubic-bezier(.4, 0, .2, 1) both;
+}
+
+@keyframes venecia-slide-in {
+  from { transform: translateX(calc(100% * var(--venecia-slide-direction))); }
+  to { transform: translateX(0); }
+}
+
+@keyframes venecia-slide-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% * var(--venecia-slide-direction))); }
+}
+
+.venecia-slider--ready .venecia-slider__copy { padding: 2.5rem 2.25rem 4.25rem; }
+
+.venecia-slider__controls {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  color: var(--dharma-surface, #fff);
+  pointer-events: none;
+}
+
+.venecia-slider__controls button {
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.venecia-slider__controls button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.venecia-slider__controls .venecia-slider__arrow {
+  position: absolute;
+  inset-block-start: 50%;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--dharma-ink, #102246) 38%, transparent);
+  backdrop-filter: blur(4px);
+  transform: translateY(-50%);
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.venecia-slider__arrow[data-prev] { inset-inline-start: .375rem; }
+.venecia-slider__arrow[data-next] { inset-inline-end: .375rem; }
+
+.venecia-slider__arrow svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.venecia-slider__arrow[data-prev] svg { transform: rotate(180deg); }
+
+.venecia-slider__controls .venecia-slider__arrow:is(:hover, :focus-visible) {
+  border-color: var(--dharma-primary-dark, #007c3e);
+  background: var(--dharma-primary-dark, #007c3e);
+}
+
+.venecia-slider__dots {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-start: 50%;
+  display: flex;
+  width: max-content;
+  transform: translateX(-50%);
+}
+
+.venecia-slider__dots button {
+  display: grid;
+  place-items: center;
+  height: 1.75rem;
+  padding: 0 .375rem;
+  background: transparent;
+}
+
+.venecia-slider__dots button::before {
+  width: .75rem;
+  height: .75rem;
+  border-radius: 1rem;
+  background: currentColor;
+  transition: width .5s ease, background-color .5s ease;
+  content: "";
+}
+
+.venecia-slider__dots button[aria-current]::before {
+  width: 1.5rem;
+  background: var(--dharma-primary, #009f4f);
+}
+
+@media (min-width: 768px) {
+  .venecia-slider::before { width: 18%; }
+  .venecia-slider::after { width: 11%; }
+
+  .venecia-slider__title { font-size: 2.5rem; }
+  .venecia-slider__slide--checklist .venecia-slider__title { font-size: 2rem; }
+  .venecia-slider__checklist { font-size: 1.0625rem; }
+  .venecia-slider__controls .venecia-slider__arrow { width: 3rem; height: 3rem; }
+  .venecia-slider__arrow svg { width: 1.25rem; height: 1.25rem; }
+  .venecia-slider__arrow[data-prev] { inset-inline-start: 1.5rem; }
+  .venecia-slider__arrow[data-next] { inset-inline-end: 1.5rem; }
+}
+
+@media (min-width: 992px) {
+  .venecia-slider__slide .container > .row { min-height: 28rem; }
+  .venecia-slider__subtitle:not(.venecia-slider__subtitle--multiline) { max-width: 48rem; }
+}
+
+@media (min-width: 1200px) {
+  .venecia-slider__slide .container > .row { min-height: 33rem; }
+  .venecia-slider__title { font-size: 3rem; }
+}
