@@ -1,8 +1,8 @@
-document.querySelectorAll('.venecia-slider').forEach(root => {
-  const slides = [...root.querySelectorAll('.venecia-slider__slide')];
+document.querySelectorAll('.dharma-slider').forEach(root => {
+  const slides = [...root.querySelectorAll('.dharma-slider__slide')];
   if (slides.length < 2) return;
 
-  const controls = root.querySelector('.venecia-slider__controls');
+  const controls = root.querySelector('.dharma-slider__controls');
   const dots = [...controls.querySelectorAll('[data-dot]')];
   const delay = Number(root.dataset.interval);
   let index = 0;
@@ -17,7 +17,7 @@ document.querySelectorAll('.venecia-slider').forEach(root => {
     }
     if (target === index) return;
 
-    root.style.setProperty('--venecia-slide-direction', next > index ? '1' : '-1');
+    root.style.setProperty('--dharma-slider-slide-direction', next > index ? '1' : '-1');
     slides[index].setAttribute('data-leaving', '');
     slides[index].removeAttribute('data-active');
     slides[index].inert = true;
@@ -61,7 +61,7 @@ document.querySelectorAll('.venecia-slider').forEach(root => {
     if (!root.contains(event.relatedTarget)) window.requestAnimationFrame(start);
   });
 
-  root.classList.add('venecia-slider--ready');
+  root.classList.add('dharma-slider--ready');
   slides.forEach(slide => { slide.hidden = false; });
   controls.hidden = false;
   start();
